@@ -1,0 +1,27 @@
+﻿@model Vending_Machine_API.Models.User
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>User Details</h2>
+
+<p>
+    <strong>Username:</strong> @Model.Username
+</p>
+<p>
+    <strong>Role:</strong> @(Model.Role ? "Buyer" : "Seller") <!-- Assuming Role is a boolean, true for buyer and false for seller -->
+</p>
+
+@if (Model.Role == false)
+{
+    <h3>Seller Actions</h3>
+    @Html.ActionLink("View Products", "Index", "Products", new { sellerId = Model.Id }, null)
+}
+else if (Model.Role == true)
+{
+    <h3>Buyer Actions</h3>
+    @Html.ActionLink("Deposit Money", "Deposit", "Users", new { id = Model.Id }, null)
+    <br />
+    @Html.ActionLink("Purchase Products", "Purchase", "Products", new { userId = Model.Id }, null) <!-- Pass userId here -->
+}

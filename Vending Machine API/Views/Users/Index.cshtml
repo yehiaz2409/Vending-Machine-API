@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Vending_Machine_API.Models.User>
+
+@{
+    ViewBag.Title = "Users";
+}
+
+<h2>Users</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Role</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+<tr>
+    <td>@user.Username</td>
+    <td>@(user.Role ? "Buyer" : "Seller")</td>
+    <td>
+        @Html.ActionLink("View Details", "Details", new { id = user.Id })
+    </td>
+</tr>}
+    </tbody>
+</table>

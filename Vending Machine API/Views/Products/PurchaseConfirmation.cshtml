@@ -1,0 +1,21 @@
+﻿@model Vending_Machine_API.Models.Product
+
+@{ ViewBag.Title = "PurchaseConfirmation"; }
+
+<h2>Purchase Confirmation</h2>
+
+<p>
+    Thank you for your purchase! You have successfully purchased @ViewBag.Quantity unit(s) of @ViewBag.ProductName.
+</p>
+
+<p>
+    Total Cost: @ViewBag.TotalCost cents
+</p>
+
+<p>
+    <a href="@Url.Action("Purchase", "Products", new { userId = ViewBag.UserId })" class="btn btn-primary">Continue Shopping</a>
+</p>
+
+<p>
+    <a href="@Url.Action("Index", "Users")" class="btn btn-secondary">Back to User List</a>
+</p>

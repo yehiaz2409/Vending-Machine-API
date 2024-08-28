@@ -1,0 +1,37 @@
+﻿@model Vending_Machine_API.Models.User
+@{
+    ViewBag.Title = "Deposit";
+}
+
+<<h2>Deposit Money</h2>
+
+<p><strong>Username:</strong> @Model.Username</p>
+<p><strong>Current Balance:</strong> @Model.Deposit cents</p>
+
+@if (ViewBag.Message != null)
+{
+<div class="alert alert-success">
+    @ViewBag.Message
+</div>}
+
+@using (Html.BeginForm())
+{
+@Html.AntiForgeryToken()
+
+                <div class="form-group">
+                    <label for="amount">Deposit Amount:</label>
+                    <select id="amount" name="amount" class="form-control">
+                        <option value="5">5 cents</option>
+                        <option value="10">10 cents</option>
+                        <option value="20">20 cents</option>
+                        <option value="50">50 cents</option>
+                        <option value="100">100 cents</option>
+                    </select>
+                    @Html.ValidationMessage("", "", new { @class = "text-danger" })
+                </div>
+
+                                <button type="submit" class="btn btn-primary">Deposit</button>}
+
+<p>
+    <a href="@Url.Action("Index", "Users")" class="btn btn-secondary">Back to User List</a>
+</p>
