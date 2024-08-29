@@ -26,11 +26,6 @@ The application supports basic CRUD operations for products and users, and it en
 
 ## Setup and Installation
 
-### Prerequisites
-
-- [.NET Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework/net48) or later
-- Visual Studio 2019 or later
-
 ### Getting Started
 
 1. **Clone the repository**:
