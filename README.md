@@ -95,14 +95,6 @@ The application supports basic CRUD operations for products and users, and it en
 
 - **Anti-Forgery Token Errors**: If you encounter issues with the anti-forgery token, ensure that cookies are enabled and that the forms are not cached.
 
-## Contribution
+## Future Work
 
-Feel free to fork this repository and submit pull requests. Contributions are always welcome!
-
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
-
-## Contact
-
-For any inquiries or issues, please contact the repository owner at [your-email@example.com](mailto:your-email@example.com).
+Authentication and use of database instead of initial declaration in the models classes is expected to be done
